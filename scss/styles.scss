@@ -1,0 +1,34 @@
+@import "components/mixings";
+@import "components/body";
+@import "components/title";
+
+
+.divBack{
+    margin-right: 2%;
+}
+.navBarHome{
+    @include navBarHome;
+}
+
+.navBar {
+    @include navBar;
+}
+
+.logo{
+    @include logo;
+}
+
+.divBtn{
+    @include divBtn;
+}
+.btnBlog{
+    @include btnBlog;
+}
+
+.opCategory{
+    @include opCategory;
+}
+
+.back{
+    @include back;
+}

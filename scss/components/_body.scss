@@ -1,0 +1,28 @@
+@import "strings";
+
+
+.main{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    background: $bgn;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.imgHome{
+    margin-top: 2%;
+}
+.category{
+    width: 400px;
+}
