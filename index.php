@@ -30,10 +30,10 @@
                 <div class="dropdown-menu" id="dropdown-menu4" role="menu">
                     <div class="dropdown-content">
                     <div class="dropdown-item">
-                        <a href="/public/views/detalles.php"><span class="has-text-info">Categoria 1</span></a>
+                        <a href="/category.php"><span class="has-text-info">Categoria 1</span></a>
                     </div>
                     <div class="dropdown-item">
-                        <a href="/public/views/detalles.php"><span class="has-text-info">Categoria 2</span></a>
+                        <a href="/category.php"><span class="has-text-info">Categoria 2</span></a>
                     </div>
                     </div>
                 </div>
@@ -67,6 +67,7 @@
                             Cras ultrices accumsan ornare. Phasellus tristique</p>
                     </div>
                 </article>
+                
 
 
         </section>
