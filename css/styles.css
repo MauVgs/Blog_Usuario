@@ -1,20 +1,28 @@
+body {
+  background: #5C769F;
+}
+
 .main {
   margin: 0;
   padding: 0;
   border: 0;
   box-sizing: border-box;
   background: #5C769F;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .flex {
+  width: 80%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: #fff;
+  margin-top: 100px;
 }
 
 .imgHome {
@@ -38,10 +46,11 @@
   width: 100%;
   height: auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 5px 10px #000;
-  position: relative;
+  box-shadow: 5px 6px 15px 0 rgba(0, 0, 0, 0.14);
+  position: fixed;
+  z-index: 1;
 }
 
 .navBar {
@@ -51,13 +60,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 5px 10px #000;
+  box-shadow: 5px 6px 15px 0 rgba(0, 0, 0, 0.14);
   position: fixed;
+  z-index: 1;
 }
 
 .logo {
   width: 90px;
   height: auto;
+  margin-left: 70px;
 }
 
 .divBtn {
@@ -70,7 +81,7 @@
   background: #95BBDB;
   border: 0;
   border-radius: 50px;
-  box-shadow: 0px 5px 10px #414141;
+  box-shadow: 5px 6px 15px 0 rgba(0, 0, 0, 0.14);
   font-family: monospace;
   font-size: 25px;
   color: #fff;
@@ -91,7 +102,7 @@
   font-family: monospace;
   border-radius: 50px;
   border: 0;
-  box-shadow: 0px 5px 10px #414141;
+  box-shadow: 5px 6px 15px 0 rgba(0, 0, 0, 0.14);
   cursor: pointer;
 }
 .opCategory:hover {
@@ -117,15 +128,54 @@
   border: 0.5px solid #CECECE;
   margin: 20px 50px;
   background: #FFFFFF;
+  box-shadow: 5px 6px 15px 0 rgba(0, 0, 0, 0.14);
 }
 
 .posArticulo {
-  margin-top: auto;
+  margin-top: 100px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   box-sizing: border-box;
+}
+
+.ml {
+  margin-right: 80px;
+}
+
+.introDetArtic {
+  margin: 10px;
+  max-width: 400px;
+  font-family: montserrat, sans-serif;
+  font-style: normal;
+  font-size: 1.2rem;
+}
+
+.contDetArtic {
+  font-family: montserrat, sans-serif;
+  margin: 10px;
+  max-width: 700px;
+}
+
+.commentDetArtic {
+  width: 100%;
+  background: burlywood;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.areaComentario {
+  border-radius: 10px;
+  padding: 10px;
+  background: #e1c39c;
+}
+
+.comentario {
+  max-width: 500px;
+  text-align: left;
 }
 
 /*# sourceMappingURL=styles.css.map */

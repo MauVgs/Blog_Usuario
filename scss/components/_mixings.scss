@@ -5,10 +5,11 @@
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    box-shadow: 0px 5px 10px #000;
-    position: relative;
+    box-shadow: 5px 6px 15px 0 rgba(0,0,0,0.14);
+    position: fixed;
+    z-index: 1;
 }
 @mixin navBar {
     background: #fff;
@@ -17,8 +18,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0px 5px 10px #000;
+    box-shadow: 5px 6px 15px 0 rgba(0,0,0,0.14);
     position: fixed;
+    z-index: 1;
 }
 
 @mixin back {
@@ -37,6 +39,7 @@
 @mixin logo {
     width: 90px;
     height: auto;
+    margin-left: 70px;
 }
 
 @mixin divBtn {
@@ -49,7 +52,7 @@
     background: $btnColor;
     border: 0;
     border-radius: 50px;
-    box-shadow: 0px 5px 10px rgb(65, 65, 65);
+    box-shadow: 5px 6px 15px 0 rgba(0,0,0,0.14);
     font-family: monospace;
     font-size: 25px;
     color: #fff;
@@ -74,7 +77,7 @@
     font-family: monospace;
     border-radius: 50px;
     border: 0;
-    box-shadow: 0px 5px 10px rgb(65, 65, 65);
+    box-shadow: 5px 6px 15px 0 rgba(0,0,0,0.14);
     cursor: pointer;
     &:hover{
         background: $btnColor;
@@ -93,4 +96,26 @@
     border: 0.5px solid #CECECE;
     margin: 20px 50px;
     background: #FFFFFF;
+    box-shadow: 5px 6px 15px 0 rgba(0,0,0,0.14);
+}
+@mixin imgDetArtic {
+    max-width: 400px;
+    height: auto;
+}
+@mixin introDetArtic {
+    margin: 10px;
+    max-width: 400px;
+    font-family: montserrat, sans-serif;
+    font-style: normal;
+    font-size: 1.2rem;
+}
+
+@mixin contDetArtic {
+    font-family: montserrat, sans-serif;
+    margin: 10px;
+    max-width: 700px;
+}
+
+@mixin commentDetArtic {
+    width: 90%;
 }

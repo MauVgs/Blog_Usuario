@@ -37,10 +37,36 @@
 }
 
 .posArticulo{
-    margin-top: auto;
+    margin-top: 100px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     box-sizing: border-box;
+}
+.ml{
+    margin-right: 80px;
+}
+.introDetArtic{
+    @include introDetArtic;
+}
+.contDetArtic{
+    @include contDetArtic;
+}
+.commentDetArtic{
+    width: 100%;
+    background: burlywood;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.areaComentario{
+    border-radius: 10px;
+    padding: 10px;
+    background:  rgb(225, 195, 156);
+}
+.comentario{
+    max-width: 500px;
+    text-align: left;
 }
