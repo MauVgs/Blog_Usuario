@@ -34,7 +34,7 @@
                     <h2>Flutter is Google’s portable UI toolkit for building beautiful, natively-compiled applications for mobile, web, and desktop from a single codebase</h2>
                 </div>
             </div></a>
-            <a href=""><div class="articulo">
+            <a href="/detalles.php"><div class="articulo">
                 <div class="imgDetArtic image">
                     <img src="/public/img/img.png" alt="">
                     <div class="title">

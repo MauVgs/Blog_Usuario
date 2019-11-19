@@ -16,7 +16,7 @@
                 <a href="/index.php"><img src="/public/img/logo.png" alt="Techies Blog" class="logo"></a>
             </div>
             <div class="divBack">
-                <a href="/index.php" ><label class="back">Volver</label></a>
+                <a href="/category.php" ><label class="back">Volver</label></a>
             </div>
         </div>
     </header>
