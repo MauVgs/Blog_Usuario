@@ -32,3 +32,15 @@
 .back{
     @include back;
 }
+.articulo{
+    @include articulo;
+}
+
+.posArticulo{
+    margin-top: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
