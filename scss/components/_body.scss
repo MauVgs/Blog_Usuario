@@ -13,6 +13,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .flex{
@@ -21,11 +22,29 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     background: #fff;
     margin-top: 100px;
+    flex-wrap: wrap;
+    box-shadow: 5px 6px 15px 0 rgba(0,0,0,0.14);
+    border-radius: 10px;
 }
 
+.flex2{
+    width: 60%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #fff;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+.detalleComentarios{
+    width: 40%;
+    height: auto;
+}
 .imgHome{
     margin-top: 2%;
 }

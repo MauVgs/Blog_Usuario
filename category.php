@@ -13,7 +13,7 @@
     <header>
         <div class="navBar">
             <div>
-                <a href="/index.php"><img src="/public/img/logo.png" alt="Techies Blog" class="logo"></a>
+                <a href="/home.php"><img src="/public/img/logo.png" alt="Techies Blog" class="logo"></a>
             </div>
             <div class="divBack">
                 <a href="/index.php" ><label class="back">Volver</label></a>
@@ -23,6 +23,28 @@
 
     <main class="main">
         <div class="has-text-centered flex">
+            <a href="/detalles.php"><div class="articulo">
+                <div class="imgDetArtic image">
+                    <img src="/public/img/img.png" alt="">
+                    <div class="title">
+                        <h1>Flutter to build iOS & Android Apps</h1>
+                    </div>
+                </div>
+                <div class="introDetArtic">
+                    <h2>Flutter is Google’s portable UI toolkit for building beautiful, natively-compiled applications for mobile, web, and desktop from a single codebase</h2>
+                </div>
+            </div></a>
+            <a href="/detalles.php"><div class="articulo">
+                <div class="imgDetArtic image">
+                    <img src="/public/img/img.png" alt="">
+                    <div class="title">
+                        <h1>Flutter to build iOS & Android Apps</h1>
+                    </div>
+                </div>
+                <div class="introDetArtic">
+                    <h2>Flutter is Google’s portable UI toolkit for building beautiful, natively-compiled applications for mobile, web, and desktop from a single codebase</h2>
+                </div>
+            </div></a>
             <a href="/detalles.php"><div class="articulo">
                 <div class="imgDetArtic image">
                     <img src="/public/img/img.png" alt="">
