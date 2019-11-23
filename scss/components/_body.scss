@@ -2,6 +2,15 @@
 
 body{
     background: $bgn;
+    .msgWelcome{
+        position: fixed;
+        margin-top: 70px;
+        color: #fff;
+        font-size: 20px;
+        strong{
+            color: #fff;
+        }
+    }
 }
 .main{
     margin: 0;

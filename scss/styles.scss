@@ -39,7 +39,7 @@
     color: #fff;
     font-size: 2rem;
     font-family: montserrat, sans-serif;
-    margin: 100px 0px 50px 0px;
+    margin: 100px 0px 10px 0px;
 }
 .autorDetArt{
     width: 70%;
@@ -51,6 +51,11 @@
 }
 .detalleInfo{
     padding: 20px;
+    .imgDetArtic{
+        img{
+            max-width: 750px;
+        }
+    }
 }
 .posArticulo{
     margin-top: 100px;
@@ -71,21 +76,25 @@
 }
 .commentDetArtic{
     width: 100%;
-    background: rgb(73, 94, 126);
+    background: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
+    .title:not(:last-child) {
+        margin-bottom: 0;
+    }
 }
 .areaComentarios{
     max-height: 300px;
     overflow-y: scroll;
 }
 .areaComentario{
+    min-width: 400px;
     border-radius: 10px;
     padding: 10px;
-    background:  rgb(96, 123, 164);
+    margin: 10px;
+    background:  rgb(213, 229, 254);
 }
 .comentario{
     max-width: 500px;
@@ -144,7 +153,6 @@ a .articulo{
             color: #000;
             font-family: montserrat, sans-serif;
             font-size: 1.2rem;
-            font-family: montserrat, sans-serif;
             font-weight: 700;
             font-style: italic;
             margin-bottom: 30px;
@@ -153,7 +161,39 @@ a .articulo{
 }
 
 .field{
+    .reg{
+        margin-top: 25px;
+    }
+    a{
+        text-decoration: none;
+        color: #95BBDB;
+        font-family: montserrat, sans-serif;
+        border-radius: 50px;
+        background: transparent;
+        box-shadow: none;
+
+    }
     .divBtn{
         display: block;
+
+    }
+}
+.formulario{
+    min-width: 500px;
+    background: #F4F4F4;
+    box-shadow: 5px 6px 15px 0 rgba(0,0,0,0.14);
+    border-radius: 5px;
+    form{
+        padding: 40px;
+        input{
+            box-shadow: 5px 6px 15px 0 rgba(0,0,0,0.14);
+        }
+    }
+}
+header{
+    .space{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 }

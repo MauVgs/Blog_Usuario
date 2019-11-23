@@ -25,7 +25,7 @@
 
 @mixin back {
     text-decoration: none;
-    font-size: 30px;
+    font-size: 20px;
     color: $bgn;
     cursor: pointer;
 }
@@ -47,8 +47,8 @@
 }
 
 @mixin btnBlog {
-    width: 300px;
-    height: 72px;
+    width: 200px;
+    height: 52px;
     background: $btnColor;
     border: 0;
     border-radius: 50px;
@@ -87,6 +87,7 @@
 
 @mixin articulo {
     max-width: 30%;
+    min-width: 30%;
     min-height: 400px;
     display: flex;
     justify-content: center;
@@ -97,6 +98,20 @@
     margin: 10px 30px;
     background: #FFFFFF;
     box-shadow: 5px 6px 15px 0 rgba(0,0,0,0.14);
+    a{ 
+        background: rgba(255, 255, 255, 0.571);
+        border-radius: 10px;
+        .tittleArticle, .infoArticle, p{
+            background: rgba(255, 255, 255, 0.31);
+        }
+        p{
+            background: none;
+        }
+        h6{
+            font-size: 2rem;
+            font-family: 'Calistoga', cursive;
+        }
+    }
 }
 @mixin imgDetArtic {
     max-width: 400px;

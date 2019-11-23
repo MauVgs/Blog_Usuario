@@ -1,6 +1,15 @@
 body {
   background: #5C769F;
 }
+body .msgWelcome {
+  position: fixed;
+  margin-top: 70px;
+  color: #fff;
+  font-size: 20px;
+}
+body .msgWelcome strong {
+  color: #fff;
+}
 
 .main {
   margin: 0;
@@ -97,8 +106,8 @@ body {
 }
 
 .btnBlog {
-  width: 300px;
-  height: 72px;
+  width: 200px;
+  height: 52px;
   background: #95BBDB;
   border: 0;
   border-radius: 50px;
@@ -133,13 +142,14 @@ body {
 
 .back {
   text-decoration: none;
-  font-size: 30px;
+  font-size: 20px;
   color: #5C769F;
   cursor: pointer;
 }
 
 .articulo {
   max-width: 30%;
+  min-width: 30%;
   min-height: 400px;
   display: flex;
   justify-content: center;
@@ -151,12 +161,26 @@ body {
   background: #FFFFFF;
   box-shadow: 5px 6px 15px 0 rgba(0, 0, 0, 0.14);
 }
+.articulo a {
+  background: rgba(255, 255, 255, 0.571);
+  border-radius: 10px;
+}
+.articulo a .tittleArticle, .articulo a .infoArticle, .articulo a p {
+  background: rgba(255, 255, 255, 0.31);
+}
+.articulo a p {
+  background: none;
+}
+.articulo a h6 {
+  font-size: 2rem;
+  font-family: "Calistoga", cursive;
+}
 
 .title2 {
   color: #fff;
   font-size: 2rem;
   font-family: montserrat, sans-serif;
-  margin: 100px 0px 50px 0px;
+  margin: 100px 0px 10px 0px;
 }
 
 .autorDetArt {
@@ -171,6 +195,9 @@ body {
 
 .detalleInfo {
   padding: 20px;
+}
+.detalleInfo .imgDetArtic img {
+  max-width: 750px;
 }
 
 .posArticulo {
@@ -202,11 +229,14 @@ body {
 
 .commentDetArtic {
   width: 100%;
-  background: #495e7e;
+  background: white;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.commentDetArtic .title:not(:last-child) {
+  margin-bottom: 0;
 }
 
 .areaComentarios {
@@ -215,9 +245,11 @@ body {
 }
 
 .areaComentario {
+  min-width: 400px;
   border-radius: 10px;
   padding: 10px;
-  background: #607ba4;
+  margin: 10px;
+  background: #d5e5fe;
 }
 
 .comentario {
@@ -281,14 +313,43 @@ a .articulo {
   color: #000;
   font-family: montserrat, sans-serif;
   font-size: 1.2rem;
-  font-family: montserrat, sans-serif;
   font-weight: 700;
   font-style: italic;
   margin-bottom: 30px;
 }
 
+.field .reg {
+  margin-top: 25px;
+}
+.field a {
+  text-decoration: none;
+  color: #95BBDB;
+  font-family: montserrat, sans-serif;
+  border-radius: 50px;
+  background: transparent;
+  box-shadow: none;
+}
 .field .divBtn {
   display: block;
+}
+
+.formulario {
+  min-width: 500px;
+  background: #F4F4F4;
+  box-shadow: 5px 6px 15px 0 rgba(0, 0, 0, 0.14);
+  border-radius: 5px;
+}
+.formulario form {
+  padding: 40px;
+}
+.formulario form input {
+  box-shadow: 5px 6px 15px 0 rgba(0, 0, 0, 0.14);
+}
+
+header .space {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

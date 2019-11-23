@@ -1,3 +1,23 @@
+<?php 
+    require_once 'config.php';
+    
+    session_start();
+
+    
+    if(!empty($_SESSION['usuario'])){
+        $usuario = $_SESSION['iduser'];
+    }    
+    $id = $_GET['id'];
+    
+    //Ejecución de sentencia para pintar datos de la nota
+    $sql = "SELECT * FROM notas WHERE id = '$id'";
+    $info = $query = mysqli_fetch_all(mysqli_query($conexion, $sql));
+    //Ejecución de la sentencia que pinta los comentarios
+    $sqlCom = "SELECT c.*, (SELECT nombre FROM usuarios WHERE  id = c.usuario_id) as usuario_nota FROM comentarios c WHERE nota_id = '$id'";
+    $infoCom = $query = mysqli_fetch_all(mysqli_query($conexion, $sqlCom));
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +28,7 @@
     <link rel="stylesheet" href="/css/styles.css" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <link rel="stylesheet" href="https://use.typekit.net/vcy1rfg.css">
+    <link rel="icon" type="image/png" href="/public/img/logo.png">
 </head>
 <body>
     <header>
@@ -22,33 +43,29 @@
     </header>
     <main class="main">
         <div class="title2 has-text-centered">
-            <h1>Flutter to build iOS & Android Apps</h1>
+            <h1><?php print_r($info[0][1]); ?></h1>
         </div>
         <div class="autorDetArt">
-            <p>Por: Dinesh Kumar</p>
+            <p>Por: <?php print_r($info[0][6]); ?></p>
         </div>
         <div class="has-text-centered flex" id="deta">
                 
             <div class="detalleInfo flex2">
                 <div class="imgDetArtic image">
-                    <img src="/public/img/img.png" alt="">
+                    <img src="<?php echo $pathImage . "public/img/" . $info[0][3]; ?>" alt="">
                 </div>
                 
                 <div class="introDetArtic">
-                    <h2>Flutter is Google’s portable UI toolkit for building beautiful, natively-compiled applications for mobile, web, and desktop from a single codebase</h2>
+                    <h2><?php print_r($info[0][2]); ?></h2>
                 </div>
                 <div class="contDetArtic">
                     <p>
-                    What is Flutter ?
-                    Flutter is an open-source, multi-platform mobile SDK which can be used 
-                    to build iOS and Android apps with the same source code. What separates 
-                    it from other cross platform frameworks like React Native and Xamarin is 
-                    that is does not use the native widgets, nor does it use WebViews.
+                    <?php print_r($info[0][5]); ?>
                     </p>
                 </div>
                 
                 <div class="fechaDetArtic">
-                    <p>Publicado el : May 27</p>
+                    <p>Publicado el : <?php print_r($info[0][7]); ?></p>
                 </div>
             </div>
 
@@ -61,51 +78,47 @@
                             <br>
                             <h1>Comentarios:</h1>
                         </div>
-                        <div class="areaComentario">
-                            <div class="comentario">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, quam 
-                                    rerum quidem eaque nesciunt illo nam tenetur similique enim eum 
-                                    labore perferendis veniam porro, reprehenderit aspernatur hic fugiat 
-                                    corrupti ratione?
-                                </p>
-                            </div>
-                            <div class="comentario">
-                                <br>
-                                <p><strong>Por: Mauricio Vargas</strong></p>
-                            </div>
-                        </div>
+                        <div id="comentario">
+                            <?php if(!empty($infoCom)) ?>
+                                <?php foreach($infoCom as $item): ?>
+                                    <div class="areaComentario">
+                                        <div class="comentario">
+                                            <p>
+                                                <?php print_r($item[3]); ?>
+                                            </p>
+                                        </div>
+                                        <div class="comentario">
+                                            <br>
+                                            <p><strong>Por: <?php print_r($item[4]); ?></strong></p>
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
+                            <?php if(empty($infoCom)): ?>
+                                <div class="areaComentario">
+                                    <div class="comentario">
+                                        <p>
+                                            Sin comentarios.
+                                        </p>
+                                    </div>
+                                </div>
+                            <?php endif; ?> 
+                        </div>   
                     </div>
-                    <div class="commentDetArtic">
-                        <div class="title">
-                            <br>
-                            <h1>Comentarios:</h1>
-                        </div>
-                        <div class="areaComentario">
-                            <div class="comentario">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, quam 
-                                    rerum quidem eaque nesciunt illo nam tenetur similique enim eum 
-                                    labore perferendis veniam porro, reprehenderit aspernatur hic fugiat 
-                                    corrupti ratione?
-                                </p>
-                            </div>
-                            <div class="comentario">
-                                <br>
-                                <p><strong>Por: Mauricio Vargas</strong></p>
-                            </div>
-                        </div>
-                    </div>
-                    
-
                 </div>
 
                 <br>
-                <div class="addComentario">
-                    <textarea name="" id="" class="textarea" placeholder="Agrega tu comentario"></textarea>
-                    <br>
-                    <button type="button" class="button">Hecho</button>
-                </div>
+                <?php if(!empty($_SESSION['usuario'])): ?>
+                    <form class="addComentario" id="formulario" method="POST">
+                    <input id="usuario" name="usuario" type="hidden" value="<?php echo ($usuario); ?>">
+                    <input id="nota" name="nota" type="hidden" value="<?php echo ($id); ?>">
+                        <textarea name="comentario" id="areaComentario" class="textarea" placeholder="Agrega tu comentario"></textarea>
+                        <br>
+                        <button type="submit" class="button">Comentar</button>
+                    </form>
+                <?php endif; ?>
             </div>
         </div>
     </main>
+    <script src="/js/main.js"></script>
 </body>
 </html>
