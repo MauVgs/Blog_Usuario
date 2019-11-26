@@ -90,14 +90,13 @@
     overflow-y: scroll;
 }
 .areaComentario{
-    min-width: 400px;
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
     background:  rgb(213, 229, 254);
 }
 .comentario{
-    max-width: 500px;
+    max-width: 100%;
     text-align: left;
 }
 
@@ -107,7 +106,7 @@
 li a{
     padding: 25px;
     text-decoration: none;
-    color: $bgn;
+    color: $btnColor;
     &:hover{
         background: #60759A;
         color: #fff;
@@ -196,4 +195,34 @@ header{
         justify-content: space-between;
         align-items: center;
     }
+}
+
+
+
+.favorito{
+    width: 100%;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    .iconFav{
+        float: left;
+        color: $bgn;
+        margin-right: 5px;
+        cursor: pointer;
+        i{
+            &:hover{
+                color: lightcoral;
+            }
+        }
+        
+    }
+}
+
+.corazonRojo{
+    color: lightcoral;
+    animation: latidos 1s ;
+}
+
+@keyframes latidos {
+    50% { transform: scale(1.4); }
 }

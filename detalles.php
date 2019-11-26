@@ -34,10 +34,10 @@
     <header>
         <div class="navBar">
             <div>
-                <a href="/home.php"><img src="/public/img/logo.png" alt="Techies Blog" class="logo"></a>
+                <a href="/index.php"><img src="/public/img/logo.png" alt="Techies Blog" class="logo"></a>
             </div>
             <div class="divBack">
-                <a href="/category.php" ><label class="back">Volver</label></a>
+                <a href="/category.php?id=<?php print_r($info[0][4]) ?>" ><label class="back">Volver</label></a>
             </div>
         </div>
     </header>
@@ -71,9 +71,9 @@
 
             <div class="detalleComentarios">
 
-                <div class="areaComentarios">
+                <div class="areaComentarios" id="scroll">
 
-                    <div class="commentDetArtic">
+                    <div class="commentDetArtic" id="alto">
                         <div class="title">
                             <br>
                             <h1>Comentarios:</h1>
@@ -94,7 +94,7 @@
                                     </div>
                                 <?php endforeach; ?>
                             <?php if(empty($infoCom)): ?>
-                                <div class="areaComentario">
+                                <div class="areaComentario" id="hide">
                                     <div class="comentario">
                                         <p>
                                             Sin comentarios.
@@ -119,6 +119,7 @@
             </div>
         </div>
     </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="/js/main.js"></script>
 </body>
 </html>

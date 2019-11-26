@@ -5,10 +5,10 @@ body{
     .msgWelcome{
         position: fixed;
         margin-top: 70px;
-        color: #fff;
+        color: $btnColor;
         font-size: 20px;
         strong{
-            color: #fff;
+            color: $btnColor;
         }
     }
 }

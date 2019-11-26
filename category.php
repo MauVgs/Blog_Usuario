@@ -69,11 +69,11 @@
                 <div class="imgDetArtic image">
                     <img src="<?php echo $pathImage . "public/img/" . $item[3]; ?>" alt="">
                     <div class="title">
-                        <h1><?php echo $pathImage . "public/img/" . $item[1]; ?></h1>
+                        <h1><?php echo $item[1]; ?></h1>
                     </div>
                 </div>
                 <div class="introDetArtic">
-                    <h2><?php echo $pathImage . "public/img/" . $item[2]; ?></h2>
+                    <h2><?php echo$item[2]; ?></h2>
                 </div>
             </div></a>
         <?php endforeach; ?>

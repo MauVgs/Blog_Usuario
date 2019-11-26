@@ -1,14 +1,14 @@
 body {
-  background: #5C769F;
+  background: #EAEBEE;
 }
 body .msgWelcome {
   position: fixed;
   margin-top: 70px;
-  color: #fff;
+  color: #95BBDB;
   font-size: 20px;
 }
 body .msgWelcome strong {
-  color: #fff;
+  color: #95BBDB;
 }
 
 .main {
@@ -16,7 +16,7 @@ body .msgWelcome strong {
   padding: 0;
   border: 0;
   box-sizing: border-box;
-  background: #5C769F;
+  background: #EAEBEE;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -143,7 +143,7 @@ body .msgWelcome strong {
 .back {
   text-decoration: none;
   font-size: 20px;
-  color: #5C769F;
+  color: #EAEBEE;
   cursor: pointer;
 }
 
@@ -245,7 +245,6 @@ body .msgWelcome strong {
 }
 
 .areaComentario {
-  min-width: 400px;
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
@@ -253,7 +252,7 @@ body .msgWelcome strong {
 }
 
 .comentario {
-  max-width: 500px;
+  max-width: 100%;
   text-align: left;
 }
 
@@ -264,7 +263,7 @@ body .msgWelcome strong {
 li a {
   padding: 25px;
   text-decoration: none;
-  color: #5C769F;
+  color: #95BBDB;
 }
 li a:hover {
   background: #60759A;
@@ -350,6 +349,33 @@ header .space {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.favorito {
+  width: 100%;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+.favorito .iconFav {
+  float: left;
+  color: #EAEBEE;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.favorito .iconFav i:hover {
+  color: lightcoral;
+}
+
+.corazonRojo {
+  color: lightcoral;
+  animation: latidos 1s;
+}
+
+@keyframes latidos {
+  50% {
+    transform: scale(1.4);
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
