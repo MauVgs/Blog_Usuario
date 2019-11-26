@@ -2,24 +2,17 @@
     include_once 'config.php';
     session_start();
     $usuario = $_SESSION['iduser'];
+    //Sentencia para traer todos los datos
+    //SELECT * FROM notas LEFT JOIN favoritos ON notas.id = favoritos.nota_id WHERE favoritos.`usuario_id` = 3;
+
 
     //Preparar sentencias para consultar información en DB
     $sqlCategoria = 'SELECT * FROM categorias WHERE borrado = 0';
-    $sqlNota = 'SELECT * FROM notas';
-    $datosFav = "SELECT nota_id FROM favoritos WHERE usuario_id = '$usuario'"; 
+    $sqlNota = 'SELECT * FROM notas WHERE favorito = 1';
 
     //Ejecución de sentencias SQL para el pintado del Front
 
-    //Favoritos
-    $fav = mysqli_query($conexion, $datosFav);
-    $resultFavoritos = mysqli_fetch_all($fav);
 
-    $arrayFav = [];
-    $c = 0;
-    foreach($resultFavoritos as $ele){
-        $arrayFav[$c] = $ele[0];
-        $c++;
-    }
     //Categorias
     $dataCategoria = $query = mysqli_query($conexion, $sqlCategoria);
     $resultCategoria = mysqli_fetch_all($dataCategoria);
@@ -75,7 +68,7 @@
         <h1 class="msgWelcome">BIENVENIDO: <strong><?php print_r(strtoupper($_SESSION['usuario']));?></strong></h1>
     <?php endif; ?>
     <main class="main">
-        <section class="posArticulo">
+        <section class="posArticuloFav">
                 <?php foreach ($resultNota as $item): ?>
                     <article class="articulo" style="
                     background-image: url('<?php echo $pathImage . "public/img/" . $item[3]; ?>');

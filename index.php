@@ -11,15 +11,16 @@
     //Ejecución de sentencias SQL para el pintado del Front
 
     //Favoritos
-    $fav = mysqli_query($conexion, $datosFav);
-    $resultFavoritos = mysqli_fetch_all($fav);
+    // $fav = mysqli_query($conexion, $datosFav);
+    // $resultFavoritos = mysqli_fetch_all($fav);
 
-    $arrayFav = [];
-    $c = 0;
-    foreach($resultFavoritos as $ele){
-        $arrayFav[$c] = $ele[0];
-        $c++;
-    }
+    // $arrayFav = [];
+    // $c = 0;
+    // foreach($resultFavoritos as $ele){
+    //     $arrayFav[$c] = $ele[0];
+    //     $c++;
+    // }
+
     //Categorias
     $dataCategoria = $query = mysqli_query($conexion, $sqlCategoria);
     $resultCategoria = mysqli_fetch_all($dataCategoria);
@@ -93,7 +94,7 @@
                         </a>
                         <div class="favorito">
                             <div class="iconFav">
-                                <i class="material-icons apagado_<?php echo $item[0] ?> <?php if(in_array($item[0], $arrayFav)) echo 'corazonRojo';?>" name="<?php if(in_array($item[0], $arrayFav)) echo 'on'; else echo 'off';  ?>" onclick="getLike(<?php echo $item[0] ?>, <?php  echo $usuario ?>)" id="like<?php echo $item[0] ?>">favorite</i>
+                                <i class="material-icons apagado_<?php echo $item[0] ?> <?php if($item[8] == 1) echo 'corazonRojo';?>"  onclick="setLike(<?php echo $item[0] ?>, <?php  echo $usuario ?>)" id="like<?php echo $item[0] ?>">favorite</i>
                             </div>
                         </div>
                     </article>
