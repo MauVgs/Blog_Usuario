@@ -8,9 +8,17 @@
 
     //Preparar sentencias para consultar información en DB
     $sqlCategoria = 'SELECT * FROM categorias WHERE borrado = 0';
-    $sqlNota = 'SELECT * FROM notas WHERE favorito = 1';
+    $sqlNota = "SELECT * FROM notas LEFT JOIN favoritos ON notas.id = favoritos.nota_id WHERE favoritos.`usuario_id` = $usuario";
 
     //Ejecución de sentencias SQL para el pintado del Front
+
+    function getFav($id){
+        global $conexion;
+        $idFav = "SELECT id FROM favoritos WHERE nota_id = {$id}";
+        $dataNota = $query = mysqli_query($conexion, $idFav);
+        $idF = mysqli_fetch_row($dataNota);
+        return $idF;
+    }
 
 
     //Categorias
@@ -69,7 +77,7 @@
     <?php endif; ?>
     <main class="main">
         <section class="posArticuloFav">
-                <?php foreach ($resultNota as $item): ?>
+                <?php foreach ($resultNota as $item): $fav = getFav($item[0]);?>
                     <article class="articulo" style="
                     background-image: url('<?php echo $pathImage . "public/img/" . $item[3]; ?>');
                     background-position: top center;
@@ -86,7 +94,11 @@
                         </a>
                         <div class="favorito">
                             <div class="iconFav">
-                                <i class="material-icons apagado_<?php echo $item[0] ?> <?php if(in_array($item[0], $arrayFav)) echo 'corazonRojo';?>" name="<?php if(in_array($item[0], $arrayFav)) echo 'on'; else echo 'off';  ?>" onclick="getLike(<?php echo $item[0] ?>, <?php  echo $usuario ?>)" id="like<?php echo $item[0] ?>">favorite</i>
+                                <?php if(!empty($fav)): ?>
+                                    <i class="material-icons apagado_<?php echo $item[0] ?> corazonRojo"  onclick="quitLike(<?php echo $item[0] ?>, <?php  echo $usuario ?>)" id="like<?php echo $item[0] ?>">favorite</i>
+                                <?php else: ?>
+                                    <i class="material-icons apagado_<?php echo $item[0] ?>"  onclick="setLike(<?php echo $item[0] ?>, <?php  echo $usuario ?>)" id="like<?php echo $item[0] ?>">favorite</i>
+                                <?php endif; ?> 
                             </div>
                         </div>
                     </article>
