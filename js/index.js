@@ -1,4 +1,4 @@
-function setLike(id_nota){
+function setLike(id_nota, idUser){
     $('#like'+id_nota).addClass('corazonRojo');
     $('#like'+id_nota).attr('onclick', `quitLike(${id_nota})`);
     
@@ -7,12 +7,12 @@ function setLike(id_nota){
         headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
         },
-        body: `id_nota=${id_nota}&fav=1`
+        body: `id_nota=${id_nota}&usuario_id=${idUser}&active=0`
     })
     .then( res => res.json()).then(console.log('Like'));    
 }
 
-function quitLike(id_nota){
+function quitLike(id_nota, idUser){
     $('#like'+id_nota).removeClass('corazonRojo');
     $('#like'+id_nota).attr('onclick', `setLike(${id_nota})`);
     fetch('/like.php',{
@@ -20,7 +20,7 @@ function quitLike(id_nota){
         headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
         },
-        body: `id_nota=${id_nota}&fav=0`
+        body: `id_nota=${id_nota}&usuario_id=${idUser}&active=1`
     })
     .then( res => res.json()).then(console.log('Dislike'));   
 }
